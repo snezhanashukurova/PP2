@@ -20,8 +20,8 @@ print(centigrade(F))
 
 def puzzle(heads, legs):
      rabbits = int((legs - 70)/2)
-     chickens = int(head - rabbits)
-     return rabits, chickens
+     chickens = int(heads - rabbits)
+     return rabbits, chickens
 heads = int(input())
 legs=int(input())
 
@@ -56,3 +56,113 @@ def permut(string):
 
 a=str(input())
 permut(a)
+
+
+# 6
+def reverse(string):
+    reverse_list=string.split(" ")
+    reverse_list.reverse()
+    for i in reverse_list:
+        print (i, end=" ")
+    
+
+string = str(input())
+reverse(string)
+
+# 7
+def has_33(nums):
+    for i in range(len(nums) - 1): 
+        if nums[i] == 3 and nums[i + 1] == 3:  
+            return True
+    return False
+
+print(has_33([1, 3, 3]))  # True
+print(has_33([1, 3, 1, 3]))  # False
+print(has_33([3, 1, 3]))  # False
+
+
+# 8
+
+def spy_game(nums): 
+    count = 0 
+    for i in nums:
+        if count == 0 and i == 0:
+            count += 1
+        elif count == 1 and i == 0:
+            count += 1
+        elif count == 2 and i == 7:
+            return True  
+    return False 
+
+print(spy_game([1,2,4,0,0,7,5]))  # → True
+print(spy_game([1,0,2,4,0,5,7]))  # → True
+print(spy_game([1,7,2,0,4,5,0]))  # → False
+print(spy_game([0, 0, 7]))        # → True
+
+
+# 9
+r=int(input())
+vol = lambda rad: (4/3) * 3.14 * pow(rad, 3)
+print(vol(r))
+
+
+# 10
+def unique(list):
+    uniqueList = []
+    for i in list:
+        if i not in  uniqueList:
+            uniqueList.append(i)
+    return uniqueList
+
+list=[11, 1, 3, 2, 1, 3, 4]
+print(unique(list))
+
+# 11
+
+def palindron(string):
+    if(string==string[::-1]):
+        return True
+    else:
+        return False
+
+
+string=str(input())
+print(palindron(string))
+
+
+# 12
+def histogram(list):
+    for i in list:
+        print("*"*i)
+
+histogram([4, 9, 7])
+
+
+# 13
+import random
+print("Hello! What is your name?")
+name=input()
+
+attempts=0
+
+num = random.randint(1, 20)
+print("Well, KBTU, I am thinking of a number between 1 and 20.")
+print("Take a guess")
+
+tr = 0
+while(tr!=num):
+    tr=int(input())
+    if(tr<num):
+        print("Your guess is too low.")
+        print("Take a guess")
+        attempts+=1
+
+    elif(tr>num):
+        print("Your guess is too high.")
+        print("Take a guess")
+        attempts+=1
+
+    else:
+        attempts+=1
+        print("Good job, {fname}! You guessed my number in {fattempt} guesses!".format(fname = name, fattempt = attempts))
+        break
