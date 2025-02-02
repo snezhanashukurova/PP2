@@ -1,7 +1,7 @@
 # 1
 
 class str():
-    def _init_(self):
+    def __init__(self):
         self.string=""
 
     def getString(self):
