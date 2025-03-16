@@ -4,7 +4,7 @@ import os
 pygame.init()
 pygame.mixer.init()
 
-screen = pygame.display.set_mode((800,300))
+screen = pygame.display.set_mode((900,300))
 pygame.display.set_caption("Apple music")
 
 path = os.listdir('/Users/asuss/Desktop/PP2/lab7')
